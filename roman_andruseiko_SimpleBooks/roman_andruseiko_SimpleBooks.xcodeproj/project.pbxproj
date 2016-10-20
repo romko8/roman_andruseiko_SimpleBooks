@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72E91DB93E8100AF4549 /* AppDelegate.swift */; };
+		CADF72EC1DB93E8100AF4549 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72EB1DB93E8100AF4549 /* ViewController.swift */; };
+		CADF72EF1DB93E8100AF4549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADF72ED1DB93E8100AF4549 /* Main.storyboard */; };
+		CADF72F21DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */; };
+		CADF72F41DB93E8100AF4549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADF72F31DB93E8100AF4549 /* Assets.xcassets */; };
+		CADF72F71DB93E8100AF4549 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADF72F51DB93E8100AF4549 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CADF72E61DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roman_andruseiko_SimpleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADF72E91DB93E8100AF4549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CADF72EB1DB93E8100AF4549 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CADF72EE1DB93E8100AF4549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CADF72F11DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = roman_andruseiko_SimpleBooks.xcdatamodel; sourceTree = "<group>"; };
+		CADF72F31DB93E8100AF4549 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CADF72F61DB93E8100AF4549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CADF72F81DB93E8100AF4549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CADF72E31DB93E8100AF4549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CADF72DD1DB93E8100AF4549 = {
+			isa = PBXGroup;
+			children = (
+				CADF72E81DB93E8100AF4549 /* roman_andruseiko_SimpleBooks */,
+				CADF72E71DB93E8100AF4549 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CADF72E71DB93E8100AF4549 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CADF72E61DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CADF72E81DB93E8100AF4549 /* roman_andruseiko_SimpleBooks */ = {
+			isa = PBXGroup;
+			children = (
+				CADF72E91DB93E8100AF4549 /* AppDelegate.swift */,
+				CADF72EB1DB93E8100AF4549 /* ViewController.swift */,
+				CADF72ED1DB93E8100AF4549 /* Main.storyboard */,
+				CADF72F31DB93E8100AF4549 /* Assets.xcassets */,
+				CADF72F51DB93E8100AF4549 /* LaunchScreen.storyboard */,
+				CADF72F81DB93E8100AF4549 /* Info.plist */,
+				CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */,
+			);
+			path = roman_andruseiko_SimpleBooks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CADF72E51DB93E8100AF4549 /* roman_andruseiko_SimpleBooks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CADF72FB1DB93E8100AF4549 /* Build configuration list for PBXNativeTarget "roman_andruseiko_SimpleBooks" */;
+			buildPhases = (
+				CADF72E21DB93E8100AF4549 /* Sources */,
+				CADF72E31DB93E8100AF4549 /* Frameworks */,
+				CADF72E41DB93E8100AF4549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = roman_andruseiko_SimpleBooks;
+			productName = roman_andruseiko_SimpleBooks;
+			productReference = CADF72E61DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CADF72DE1DB93E8100AF4549 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = SimpleBooks;
+				TargetAttributes = {
+					CADF72E51DB93E8100AF4549 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = CADF72E11DB93E8100AF4549 /* Build configuration list for PBXProject "roman_andruseiko_SimpleBooks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CADF72DD1DB93E8100AF4549;
+			productRefGroup = CADF72E71DB93E8100AF4549 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CADF72E51DB93E8100AF4549 /* roman_andruseiko_SimpleBooks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CADF72E41DB93E8100AF4549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADF72F71DB93E8100AF4549 /* LaunchScreen.storyboard in Resources */,
+				CADF72F41DB93E8100AF4549 /* Assets.xcassets in Resources */,
+				CADF72EF1DB93E8100AF4549 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CADF72E21DB93E8100AF4549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADF72F21DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld in Sources */,
+				CADF72EC1DB93E8100AF4549 /* ViewController.swift in Sources */,
+				CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CADF72ED1DB93E8100AF4549 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CADF72EE1DB93E8100AF4549 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CADF72F51DB93E8100AF4549 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CADF72F61DB93E8100AF4549 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CADF72F91DB93E8100AF4549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CADF72FA1DB93E8100AF4549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CADF72FC1DB93E8100AF4549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = roman_andruseiko_SimpleBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplebooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		CADF72FD1DB93E8100AF4549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = roman_andruseiko_SimpleBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplebooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CADF72E11DB93E8100AF4549 /* Build configuration list for PBXProject "roman_andruseiko_SimpleBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADF72F91DB93E8100AF4549 /* Debug */,
+				CADF72FA1DB93E8100AF4549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CADF72FB1DB93E8100AF4549 /* Build configuration list for PBXNativeTarget "roman_andruseiko_SimpleBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADF72FC1DB93E8100AF4549 /* Debug */,
+				CADF72FD1DB93E8100AF4549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CADF72F11DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodel */,
+			);
+			currentVersion = CADF72F11DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodel */;
+			path = roman_andruseiko_SimpleBooks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CADF72DE1DB93E8100AF4549 /* Project object */;
+}
