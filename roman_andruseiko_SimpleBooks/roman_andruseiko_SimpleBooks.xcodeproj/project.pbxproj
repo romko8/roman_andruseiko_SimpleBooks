@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2FD5631DB9412D0065E636 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2FD55F1DB9412D0065E636 /* Bolts.framework */; };
+		CA2FD5641DB9412D0065E636 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2FD5601DB9412D0065E636 /* FBSDKCoreKit.framework */; };
+		CA2FD5651DB9412D0065E636 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2FD5611DB9412D0065E636 /* FBSDKLoginKit.framework */; };
+		CA2FD5661DB9412D0065E636 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2FD5621DB9412D0065E636 /* FBSDKShareKit.framework */; };
 		CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72E91DB93E8100AF4549 /* AppDelegate.swift */; };
 		CADF72EC1DB93E8100AF4549 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72EB1DB93E8100AF4549 /* ViewController.swift */; };
 		CADF72EF1DB93E8100AF4549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADF72ED1DB93E8100AF4549 /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA2FD55F1DB9412D0065E636 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		CA2FD5601DB9412D0065E636 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CA2FD5611DB9412D0065E636 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		CA2FD5621DB9412D0065E636 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		CADF72E61DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roman_andruseiko_SimpleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF72E91DB93E8100AF4549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CADF72EB1DB93E8100AF4549 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,12 +39,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2FD5661DB9412D0065E636 /* FBSDKShareKit.framework in Frameworks */,
+				CA2FD5631DB9412D0065E636 /* Bolts.framework in Frameworks */,
+				CA2FD5641DB9412D0065E636 /* FBSDKCoreKit.framework in Frameworks */,
+				CA2FD5651DB9412D0065E636 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA2FD55D1DB940E40065E636 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CADF72F31DB93E8100AF4549 /* Assets.xcassets */,
+				CADF72F51DB93E8100AF4549 /* LaunchScreen.storyboard */,
+				CADF72F81DB93E8100AF4549 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CA2FD55E1DB9412D0065E636 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				CA2FD55F1DB9412D0065E636 /* Bolts.framework */,
+				CA2FD5601DB9412D0065E636 /* FBSDKCoreKit.framework */,
+				CA2FD5611DB9412D0065E636 /* FBSDKLoginKit.framework */,
+				CA2FD5621DB9412D0065E636 /* FBSDKShareKit.framework */,
+			);
+			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		CA2FD5671DB942B10065E636 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		CADF72DD1DB93E8100AF4549 = {
 			isa = PBXGroup;
 			children = (
@@ -59,10 +100,9 @@
 				CADF72E91DB93E8100AF4549 /* AppDelegate.swift */,
 				CADF72EB1DB93E8100AF4549 /* ViewController.swift */,
 				CADF72ED1DB93E8100AF4549 /* Main.storyboard */,
-				CADF72F31DB93E8100AF4549 /* Assets.xcassets */,
-				CADF72F51DB93E8100AF4549 /* LaunchScreen.storyboard */,
-				CADF72F81DB93E8100AF4549 /* Info.plist */,
-				CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */,
+				CA2FD5671DB942B10065E636 /* Database */,
+				CA2FD55E1DB9412D0065E636 /* FacebookSDK */,
+				CA2FD55D1DB940E40065E636 /* SupportingFiles */,
 			);
 			path = roman_andruseiko_SimpleBooks;
 			sourceTree = "<group>";
@@ -254,6 +294,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/roman_andruseiko_SimpleBooks/FacebookSDK",
+				);
 				INFOPLIST_FILE = roman_andruseiko_SimpleBooks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -267,6 +311,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/roman_andruseiko_SimpleBooks/FacebookSDK",
+				);
 				INFOPLIST_FILE = roman_andruseiko_SimpleBooks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
