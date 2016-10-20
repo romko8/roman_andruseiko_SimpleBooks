@@ -12,7 +12,9 @@ class GenresViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+//        WebService.sharedInstance.getGenres()
+        WebService.sharedInstance.getBestsellers("Family")
     }
     
     override func didReceiveMemoryWarning() {

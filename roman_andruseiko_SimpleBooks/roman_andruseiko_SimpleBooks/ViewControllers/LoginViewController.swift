@@ -24,10 +24,16 @@ class LoginViewController: UIViewController {
     
 }
 
+// MARK: FBSDKLoginButton Delegate
+
 extension LoginViewController:FBSDKLoginButtonDelegate {
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!){
         print("error - \(error)")
         print("result - \(result)")
+        if error == nil {
+            let genresViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GenresViewController")
+            self.navigationController?.pushViewController(genresViewController!, animated: true)
+        }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
