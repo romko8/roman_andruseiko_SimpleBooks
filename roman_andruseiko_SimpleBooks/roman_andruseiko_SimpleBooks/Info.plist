@@ -39,14 +39,14 @@
         <dict>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>fb1690074051309292</string>
+                <string>fb981532675309841</string>
             </array>
         </dict>
     </array>
     <key>FacebookAppID</key>
-    <string>1690074051309292</string>
+    <string>981532675309841</string>
     <key>FacebookDisplayName</key>
-    <string>BooksApp</string>
+    <string>BooksSimple</string>
     <key>LSApplicationQueriesSchemes</key>
     <array>
         <string>fbapi</string>
