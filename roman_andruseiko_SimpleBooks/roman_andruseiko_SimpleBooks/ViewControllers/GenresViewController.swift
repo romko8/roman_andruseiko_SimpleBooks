@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class GenresViewController: UIViewController {
     
@@ -17,13 +18,31 @@ class GenresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buildUI()
+        
         WebService.sharedInstance.getGenres { (genres) in
-            print("count - \(genres?.count)")
             self.dataSource = genres ?? []
-            
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
 //        WebService.sharedInstance.getBestsellers("Family")
+    }
+    
+    func buildUI() {
+        let leftBarButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(GenresViewController.logOutButtonPressed))
+        self.tabBarController?.navigationItem.leftBarButtonItem = leftBarButton
+        self.tabBarController?.navigationItem.title = "SimpleBooks"
+        
+    }
+    
+    func logOutButtonPressed() {
+        FBSDKLoginManager.init().logOut()
+        FBSDKAccessToken.setCurrent(nil)
+
+        CoreDataManager.sharedInstance.removeUsers()
+
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,18 +55,24 @@ class GenresViewController: UIViewController {
 
 extension GenresViewController : UITableViewDataSource, UITableViewDelegate {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: nil)
-        let genre = dataSource[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        let genre = dataSource[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = genre.name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let genre = dataSource[(indexPath as NSIndexPath).row]
+        print(genre.encodedName)
     }
 }

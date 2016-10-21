@@ -10,8 +10,18 @@ import UIKit
 
 class AbstractViewController: UIViewController {
 
-    func pushViewControllerWithIdentifier(storyboardID: String) {
-        let genresViewController = self.storyboard?.instantiateViewControllerWithIdentifier(storyboardID)
+    func pushViewControllerWithIdentifier(_ storyboardID: String) {
+        let genresViewController = self.storyboard?.instantiateViewController(withIdentifier: storyboardID)
         self.navigationController?.pushViewController(genresViewController!, animated: true)
+    }
+    
+    func showAlertWithMessage(message : String) {
+        let alert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showErrorMessage() {
+        showAlertWithMessage(message: "Something went wrong. Please try again.")
     }
 }

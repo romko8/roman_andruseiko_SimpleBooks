@@ -19,6 +19,12 @@
 		CA2FD57E1DB95FA20065E636 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD57D1DB95FA20065E636 /* AbstractViewController.swift */; };
 		CA2FD5891DBA3CC10065E636 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5881DBA3CC10065E636 /* Genre.swift */; };
 		CA2FD58B1DBA4AD80065E636 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD58A1DBA4AD80065E636 /* FavoritesViewController.swift */; };
+		CA2FD5A21DBA671E0065E636 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5A01DBA671E0065E636 /* CoreDataManager.swift */; };
+		CA2FD5A41DBA68300065E636 /* CoreDataManagerExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5A11DBA671E0065E636 /* CoreDataManagerExtentsions.swift */; };
+		CA2FD5A91DBA6A520065E636 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5A51DBA6A520065E636 /* User+CoreDataClass.swift */; };
+		CA2FD5AA1DBA6A520065E636 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5A61DBA6A520065E636 /* User+CoreDataProperties.swift */; };
+		CA2FD5AB1DBA6A520065E636 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5A71DBA6A520065E636 /* Book+CoreDataClass.swift */; };
+		CA2FD5AC1DBA6A520065E636 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5A81DBA6A520065E636 /* Book+CoreDataProperties.swift */; };
 		CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72E91DB93E8100AF4549 /* AppDelegate.swift */; };
 		CADF72EF1DB93E8100AF4549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADF72ED1DB93E8100AF4549 /* Main.storyboard */; };
 		CADF72F21DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */; };
@@ -40,6 +46,12 @@
 		CA2FD57D1DB95FA20065E636 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		CA2FD5881DBA3CC10065E636 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		CA2FD58A1DBA4AD80065E636 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		CA2FD5A01DBA671E0065E636 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CA2FD5A11DBA671E0065E636 /* CoreDataManagerExtentsions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerExtentsions.swift; sourceTree = "<group>"; };
+		CA2FD5A51DBA6A520065E636 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CA2FD5A61DBA6A520065E636 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CA2FD5A71DBA6A520065E636 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CA2FD5A81DBA6A520065E636 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CADF72E61DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roman_andruseiko_SimpleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF72E91DB93E8100AF4549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CADF72EE1DB93E8100AF4549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +101,12 @@
 		CA2FD5671DB942B10065E636 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				CA2FD5A51DBA6A520065E636 /* User+CoreDataClass.swift */,
+				CA2FD5A61DBA6A520065E636 /* User+CoreDataProperties.swift */,
+				CA2FD5A71DBA6A520065E636 /* Book+CoreDataClass.swift */,
+				CA2FD5A81DBA6A520065E636 /* Book+CoreDataProperties.swift */,
+				CA2FD5A01DBA671E0065E636 /* CoreDataManager.swift */,
+				CA2FD5A11DBA671E0065E636 /* CoreDataManagerExtentsions.swift */,
 				CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */,
 			);
 			name = Database;
@@ -226,14 +244,20 @@
 			files = (
 				CA2FD5891DBA3CC10065E636 /* Genre.swift in Sources */,
 				CA2FD5701DB943870065E636 /* LoginViewController.swift in Sources */,
+				CA2FD5A21DBA671E0065E636 /* CoreDataManager.swift in Sources */,
+				CA2FD5A91DBA6A520065E636 /* User+CoreDataClass.swift in Sources */,
 				CA2FD56F1DB943870065E636 /* GenresViewController.swift in Sources */,
 				CA2FD57E1DB95FA20065E636 /* AbstractViewController.swift in Sources */,
 				CA2FD57B1DB94FED0065E636 /* WebService.swift in Sources */,
 				CADF72F21DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld in Sources */,
 				CA2FD56D1DB943870065E636 /* BestsellersViewController.swift in Sources */,
 				CA2FD56E1DB943870065E636 /* BookDetailsViewController.swift in Sources */,
+				CA2FD5AB1DBA6A520065E636 /* Book+CoreDataClass.swift in Sources */,
+				CA2FD5AA1DBA6A520065E636 /* User+CoreDataProperties.swift in Sources */,
 				CA2FD58B1DBA4AD80065E636 /* FavoritesViewController.swift in Sources */,
 				CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */,
+				CA2FD5AC1DBA6A520065E636 /* Book+CoreDataProperties.swift in Sources */,
+				CA2FD5A41DBA68300065E636 /* CoreDataManagerExtentsions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -335,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -353,11 +377,11 @@
 					"$(PROJECT_DIR)/roman_andruseiko_SimpleBooks/FacebookSDK",
 				);
 				INFOPLIST_FILE = roman_andruseiko_SimpleBooks/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.simplebooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -372,11 +396,11 @@
 					"$(PROJECT_DIR)/roman_andruseiko_SimpleBooks/FacebookSDK",
 				);
 				INFOPLIST_FILE = roman_andruseiko_SimpleBooks/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.simplebooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SimpleBooks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1J-UU-VuX">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.73333333329999995" green="0.74509803919999995" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="w1J-UU-VuX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="R15-Im-aVg"/>
-                            <constraint firstItem="w1J-UU-VuX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="h5F-By-7zR"/>
+                            <constraint firstItem="w1J-UU-VuX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-167.25" id="h5F-By-7zR"/>
                         </constraints>
                     </view>
                 </viewController>
