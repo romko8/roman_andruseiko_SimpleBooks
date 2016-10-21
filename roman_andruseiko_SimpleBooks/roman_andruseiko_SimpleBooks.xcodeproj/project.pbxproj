@@ -16,6 +16,9 @@
 		CA2FD5771DB949700065E636 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2FD5731DB949700065E636 /* FBSDKLoginKit.framework */; };
 		CA2FD5781DB949700065E636 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2FD5741DB949700065E636 /* FBSDKShareKit.framework */; };
 		CA2FD57B1DB94FED0065E636 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD57A1DB94FED0065E636 /* WebService.swift */; };
+		CA2FD57E1DB95FA20065E636 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD57D1DB95FA20065E636 /* AbstractViewController.swift */; };
+		CA2FD5891DBA3CC10065E636 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD5881DBA3CC10065E636 /* Genre.swift */; };
+		CA2FD58B1DBA4AD80065E636 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FD58A1DBA4AD80065E636 /* FavoritesViewController.swift */; };
 		CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72E91DB93E8100AF4549 /* AppDelegate.swift */; };
 		CADF72EF1DB93E8100AF4549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADF72ED1DB93E8100AF4549 /* Main.storyboard */; };
 		CADF72F21DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */; };
@@ -34,6 +37,9 @@
 		CA2FD5741DB949700065E636 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		CA2FD5791DB94A280065E636 /* roman_andruseiko_SimpleBooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = roman_andruseiko_SimpleBooks.entitlements; sourceTree = "<group>"; };
 		CA2FD57A1DB94FED0065E636 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		CA2FD57D1DB95FA20065E636 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
+		CA2FD5881DBA3CC10065E636 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		CA2FD58A1DBA4AD80065E636 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		CADF72E61DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roman_andruseiko_SimpleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF72E91DB93E8100AF4549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CADF72EE1DB93E8100AF4549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,12 +97,22 @@
 		CA2FD5681DB943870065E636 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA2FD57D1DB95FA20065E636 /* AbstractViewController.swift */,
 				CA2FD56C1DB943870065E636 /* LoginViewController.swift */,
 				CA2FD56B1DB943870065E636 /* GenresViewController.swift */,
 				CA2FD5691DB943870065E636 /* BestsellersViewController.swift */,
 				CA2FD56A1DB943870065E636 /* BookDetailsViewController.swift */,
+				CA2FD58A1DBA4AD80065E636 /* FavoritesViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CA2FD5871DBA3C080065E636 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA2FD5881DBA3CC10065E636 /* Genre.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		CADF72DD1DB93E8100AF4549 = {
@@ -121,6 +137,7 @@
 				CA2FD5681DB943870065E636 /* ViewControllers */,
 				CADF72E91DB93E8100AF4549 /* AppDelegate.swift */,
 				CA2FD57A1DB94FED0065E636 /* WebService.swift */,
+				CA2FD5871DBA3C080065E636 /* DataModels */,
 				CADF72ED1DB93E8100AF4549 /* Main.storyboard */,
 				CA2FD5671DB942B10065E636 /* Database */,
 				CA2FD55E1DB9412D0065E636 /* FacebookSDK */,
@@ -207,12 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2FD5891DBA3CC10065E636 /* Genre.swift in Sources */,
 				CA2FD5701DB943870065E636 /* LoginViewController.swift in Sources */,
 				CA2FD56F1DB943870065E636 /* GenresViewController.swift in Sources */,
+				CA2FD57E1DB95FA20065E636 /* AbstractViewController.swift in Sources */,
 				CA2FD57B1DB94FED0065E636 /* WebService.swift in Sources */,
 				CADF72F21DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld in Sources */,
 				CA2FD56D1DB943870065E636 /* BestsellersViewController.swift in Sources */,
 				CA2FD56E1DB943870065E636 /* BookDetailsViewController.swift in Sources */,
+				CA2FD58B1DBA4AD80065E636 /* FavoritesViewController.swift in Sources */,
 				CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

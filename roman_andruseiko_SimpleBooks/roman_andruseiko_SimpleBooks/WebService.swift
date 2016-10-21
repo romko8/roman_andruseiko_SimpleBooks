@@ -32,9 +32,22 @@ class WebService: NSObject {
         }).resume()
     }
     
-    func getGenres() {
+    func getGenres( completion: (genres: [Genre]?) -> Void) {
         makeRequest("GET", url: booksAPIServerURL + "lists/names.json?api-key=" + booksAPIKey) { (response, error) in
-            print("response - \(response)")
+            if error == nil && response != nil {
+                if let results = response?.objectForKey("results") as? [[String : AnyObject]]{
+                    var genres:[Genre] = []
+                    for genreDictionary in results {
+                        let genre = Genre.init(dictionary: genreDictionary)
+                        genres.append(genre)
+                    }
+                    completion(genres: genres)
+                } else {
+                    completion(genres: nil)
+                }
+            } else {
+                completion(genres: nil)
+            }
         }
     }
     

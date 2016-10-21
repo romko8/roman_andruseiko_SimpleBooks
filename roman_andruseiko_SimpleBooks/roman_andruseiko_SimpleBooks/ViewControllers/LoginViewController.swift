@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: AbstractViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +31,8 @@ extension LoginViewController:FBSDKLoginButtonDelegate {
         print("error - \(error)")
         print("result - \(result)")
         if error == nil {
-            let genresViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GenresViewController")
-            self.navigationController?.pushViewController(genresViewController!, animated: true)
+//            pushViewControllerWithIdentifier("GenresViewController")
+            self.performSegueWithIdentifier("goToTabBarController", sender: nil)
         }
     }
     

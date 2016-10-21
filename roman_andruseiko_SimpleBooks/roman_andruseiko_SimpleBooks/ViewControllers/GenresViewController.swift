@@ -10,11 +10,20 @@ import UIKit
 
 class GenresViewController: UIViewController {
     
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dataSource: [Genre] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        WebService.sharedInstance.getGenres()
-        WebService.sharedInstance.getBestsellers("Family")
+        WebService.sharedInstance.getGenres { (genres) in
+            print("count - \(genres?.count)")
+            self.dataSource = genres ?? []
+            
+            self.tableView.reloadData()
+        }
+//        WebService.sharedInstance.getBestsellers("Family")
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,4 +32,22 @@ class GenresViewController: UIViewController {
     }
     
     
+}
+
+extension GenresViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+        let genre = dataSource[indexPath.row]
+        cell.textLabel?.text = genre.name
+        return cell
+    }
 }
