@@ -11,21 +11,15 @@ import FBSDKLoginKit
 
 class GenresViewController: UIViewController {
     
-    
+    var dataSource: [Genre] = []
+    var refreshControl: UIRefreshControl!
     @IBOutlet weak var tableView: UITableView!
     
-    var dataSource: [Genre] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
         buildUI()
-        
-        WebService.sharedInstance.getGenres { (genres) in
-            self.dataSource = genres ?? []
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        refreshData(sender: nil)
 //        WebService.sharedInstance.getBestsellers("Family")
     }
     
@@ -34,6 +28,20 @@ class GenresViewController: UIViewController {
         self.tabBarController?.navigationItem.leftBarButtonItem = leftBarButton
         self.tabBarController?.navigationItem.title = "SimpleBooks"
         
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
+        refreshControl.addTarget(self, action: #selector(GenresViewController.refreshData(sender:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    func refreshData(sender:AnyObject?) {
+        WebService.sharedInstance.getGenres { (genres) in
+            self.dataSource = genres ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                sender?.endRefreshing()
+            }
+        }
     }
     
     func logOutButtonPressed() {
