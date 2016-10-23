@@ -39,7 +39,10 @@ extension CoreDataManager {
         self.saveContext(nil)
     }
     
-    func createBook(name: String, author: String, amazonURL: String, rank: String, isbnCode: String, image: NSData) {
+    func createBook(name: String, author: String, amazonURL: String, rank: String, isbnCode: String, image: NSData?) {
+        guard let user = self.getUser() else {
+            return
+        }
         guard let id = self.uniqueIdForEntity(Book.self) else {
             return
         }
@@ -50,8 +53,11 @@ extension CoreDataManager {
         book.author = author
         book.amazonURL = amazonURL
         book.rank = rank
-        book.image = image
+        if image != nil {
+            book.image = image
+        }
         book.isbnCode = isbnCode
+        user.addToBooks(book)
         self.saveContext(nil)
     }
     
@@ -74,5 +80,12 @@ extension CoreDataManager {
                 }
             })
         }
+    }
+    
+    func getAllBooks() -> [Book]? {
+        guard let user = self.getUser() else {
+            return nil
+        }
+        return user.books?.allObjects as? [Book]
     }
 }

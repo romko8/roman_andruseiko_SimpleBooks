@@ -14,6 +14,7 @@ class Bestseller: NSObject {
     var rank: Int = -1
     var isbnCode: String?
     var amazonURL: String?
+    var imageData: NSData?
     
     init (dictionary: [String : AnyObject]) {        
         if dictionary["book_details"] != nil {
@@ -30,6 +31,8 @@ class Bestseller: NSObject {
         
         if dictionary["rank"] != nil {
             self.rank = (dictionary["rank"] as? Int)!
+        } else {
+            self.rank = 0
         }
         
         if dictionary["isbns"] != nil {
@@ -44,6 +47,15 @@ class Bestseller: NSObject {
         if dictionary["amazon_product_url"] != nil {
             self.amazonURL = dictionary["amazon_product_url"] as? String
         }
+    }
+    
+    init(book: Book) {
+        self.name = book.name
+        self.authorName = book.author
+        self.rank = Int(book.rank!)!
+        self.isbnCode = book.isbnCode
+        self.amazonURL = book.amazonURL
+        self.imageData = book.image
     }
 }
 

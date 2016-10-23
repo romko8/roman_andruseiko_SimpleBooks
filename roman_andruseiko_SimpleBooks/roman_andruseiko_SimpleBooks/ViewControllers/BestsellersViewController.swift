@@ -8,12 +8,11 @@
 
 import UIKit
 
-class BestsellersViewController: UIViewController {
+class BestsellersViewController: AbstractViewController {
     var genre:Genre?
     
-    var dataSource: [Bestseller] = []
+    var dataSource: [AnyObject] = []
     var refreshControl: UIRefreshControl!
-    var selectedBestseller: Bestseller?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -41,10 +40,6 @@ WebService.sharedInstance.getBestsellers((genre?.encodedName)!) { (bestsellers) 
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController: BookDetailsViewController = segue.destination as! BookDetailsViewController
-        destinationViewController.bestseller = selectedBestseller
-    }
 }
 
 extension BestsellersViewController : UITableViewDataSource, UITableViewDelegate {
@@ -59,7 +54,7 @@ extension BestsellersViewController : UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BestsellerCustomCell", for: indexPath) as! BestsellerCustomCell
-        let bestseller = dataSource[(indexPath as NSIndexPath).row]
+        let bestseller = dataSource[(indexPath as NSIndexPath).row] as! Bestseller
         cell.bookNameLabel.text = bestseller.name
         cell.authorLabel.text = bestseller.authorName
         cell.coverImageView.setImageDownloadedFrom(link: WebService.sharedInstance.getCoverImageURL(bestseller.isbnCode))
@@ -72,8 +67,10 @@ extension BestsellersViewController : UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        selectedBestseller = dataSource[(indexPath as NSIndexPath).row]
-        self.performSegue(withIdentifier: "detailsControllerSegue", sender: nil)
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "bookDetailsViewController") as! BookDetailsViewController
+        viewController.bestseller = dataSource[(indexPath as NSIndexPath).row] as? Bestseller
+        self.navigationController?.pushViewController(viewController, animated: true)
+
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 
-class GenresViewController: UIViewController {
+class GenresViewController: AbstractViewController {
     
     var dataSource: [Genre] = []
     var refreshControl: UIRefreshControl!

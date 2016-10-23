@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKShareKit
 
-class BookDetailsViewController: UIViewController {
+class BookDetailsViewController: AbstractViewController {
     var bestseller: Bestseller?
     let facebookShareButton = FBSDKShareButton()
     
@@ -32,7 +32,11 @@ class BookDetailsViewController: UIViewController {
         if  bestseller == nil {
             return
         }
-        imageView.setImageDownloadedFrom(link: WebService.sharedInstance.getCoverImageURL(bestseller?.isbnCode))
+        if bestseller?.imageData != nil {
+            imageView.image = UIImage(data: bestseller?.imageData as! Data)
+        } else {
+            imageView.setImageDownloadedFrom(link: WebService.sharedInstance.getCoverImageURL(bestseller?.isbnCode))
+        }
         nameLabel.text = bestseller?.name
         authorLabel.text = bestseller?.authorName
         if (bestseller?.rank)! > 0 {
@@ -78,7 +82,11 @@ class BookDetailsViewController: UIViewController {
     @IBAction func likeButtonPressed(_ sender: AnyObject) {
         let book = CoreDataManager.sharedInstance.getBookWithCode(isbnCode: (bestseller?.isbnCode)!)
         if book == nil {
-            CoreDataManager.sharedInstance.createBook(name: (bestseller?.name)!, author: (bestseller?.authorName)!, amazonURL: (bestseller?.amazonURL)!, rank: String(describing: (bestseller?.rank)!), isbnCode: (bestseller?.isbnCode)!, image: UIImagePNGRepresentation(imageView.image!)! as NSData)
+            var imageData: NSData? = nil
+            if imageView.image != nil{
+                imageData = UIImagePNGRepresentation(imageView.image!)! as NSData
+            }
+            CoreDataManager.sharedInstance.createBook(name: (bestseller?.name)!, author: (bestseller?.authorName)!, amazonURL: (bestseller?.amazonURL)!, rank: String(describing: (bestseller?.rank)!), isbnCode: (bestseller?.isbnCode)!, image: imageData)
         } else {
             CoreDataManager.sharedInstance.removeBookWithCode(isbnCode: (bestseller?.isbnCode)!)
         }

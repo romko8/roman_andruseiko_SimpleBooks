@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="1000.8" y="94.902548725637189"/>
         </scene>
-        <!--Favorites-->
+        <!--Favorites View Controller-->
         <scene sceneID="Fmy-x3-ncQ">
             <objects>
                 <viewController id="wXt-kO-ymD" customClass="FavoritesViewController" customModule="roman_andruseiko_SimpleBooks" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,15 +51,33 @@
                     <view key="view" contentMode="scaleToFill" id="rfJ-ix-pA2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QeJ-tV-vRY">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wXt-kO-ymD" id="De3-fw-1gR"/>
+                                    <outlet property="delegate" destination="wXt-kO-ymD" id="Vg5-m9-me0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5wd-3l-vsK" firstAttribute="top" secondItem="QeJ-tV-vRY" secondAttribute="bottom" id="5Vk-1f-jBk"/>
+                            <constraint firstItem="QeJ-tV-vRY" firstAttribute="top" secondItem="gUS-fb-PUd" secondAttribute="bottom" constant="-64" id="YVr-Es-6aK"/>
+                            <constraint firstAttribute="trailing" secondItem="QeJ-tV-vRY" secondAttribute="trailing" id="Zy1-1N-sBe"/>
+                            <constraint firstItem="QeJ-tV-vRY" firstAttribute="leading" secondItem="rfJ-ix-pA2" secondAttribute="leading" id="lw9-DF-TCI"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Sfn-UM-xFK"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Sfn-UM-xFK"/>
+                    <connections>
+                        <outlet property="tableView" destination="QeJ-tV-vRY" id="UZE-Ui-Kkh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZ2-9h-Txe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="491"/>
+            <point key="canvasLocation" x="2480.8000000000002" y="490.70464767616198"/>
         </scene>
-        <!--Genres-->
+        <!--Genres View Controller-->
         <scene sceneID="53Y-PN-Ja6">
             <objects>
                 <viewController id="4Na-Ml-vB6" customClass="GenresViewController" customModule="roman_andruseiko_SimpleBooks" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +105,7 @@
                             <constraint firstItem="NB4-jA-fSk" firstAttribute="top" secondItem="ihb-Cd-ZbN" secondAttribute="bottom" id="icG-x7-fe9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Genres" id="e5m-QH-IZ9"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="e5m-QH-IZ9"/>
                     <connections>
                         <outlet property="tableView" destination="ihb-Cd-ZbN" id="LBY-LN-HtQ"/>
                         <segue destination="Qy9-R5-8JJ" kind="show" identifier="bestsellersControllerSegue" id="ZDg-sr-RF7"/>
@@ -127,7 +145,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Nmb-OW-CaD" id="HJn-7Y-WCl"/>
-                        <segue destination="IAg-pf-oXn" kind="show" identifier="detailsControllerSegue" id="6mK-jO-MzM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8k4-f5-MgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,7 +154,7 @@
         <!--Book Details View Controller-->
         <scene sceneID="XlN-nU-Yqy">
             <objects>
-                <viewController id="IAg-pf-oXn" customClass="BookDetailsViewController" customModule="roman_andruseiko_SimpleBooks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bookDetailsViewController" id="IAg-pf-oXn" customClass="BookDetailsViewController" customModule="roman_andruseiko_SimpleBooks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRE-M2-iyB"/>
                         <viewControllerLayoutGuide type="bottom" id="iY7-Az-ulx"/>

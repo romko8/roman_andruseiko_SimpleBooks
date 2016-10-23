@@ -8,17 +8,42 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: BestsellersViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshData(sender: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func buildUI() {
+    
     }
     
+    override func refreshData(sender:AnyObject?) {
+        self.dataSource = CoreDataManager.sharedInstance.getAllBooks() ?? []
+        self.tableView.reloadData()
+    }
+}
+
+extension FavoritesViewController {
     
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BestsellerCustomCell", for: indexPath) as! BestsellerCustomCell
+        let book = dataSource[(indexPath as NSIndexPath).row] as! Book
+        cell.bookNameLabel.text = book.name
+        cell.authorLabel.text = book.author
+        if book.image != nil {
+            cell.coverImageView.image = UIImage(data: book.image as! Data)
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "bookDetailsViewController") as! BookDetailsViewController
+        viewController.bestseller = Bestseller.init(book: (dataSource[(indexPath as NSIndexPath).row] as? Book)!)
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
 }
