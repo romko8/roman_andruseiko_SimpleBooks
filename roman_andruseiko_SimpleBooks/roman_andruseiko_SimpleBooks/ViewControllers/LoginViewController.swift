@@ -49,7 +49,7 @@ class LoginViewController: AbstractViewController {
     }
     
     func makeLogIn() {
-        self.performSegue(withIdentifier: "goToTabBarController", sender: nil)
+        self.performSegue(withIdentifier: "tabBarControllerSegue", sender: nil)
     }
     
 //    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"

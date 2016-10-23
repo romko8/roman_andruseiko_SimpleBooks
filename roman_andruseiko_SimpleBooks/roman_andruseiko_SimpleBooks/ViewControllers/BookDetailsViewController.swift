@@ -9,10 +9,13 @@
 import UIKit
 
 class BookDetailsViewController: UIViewController {
+    var bestseller: Bestseller?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        print("bestseller - \(bestseller?.name)")
+        print("isbnCode - \(bestseller?.isbnCode)")
     }
     
     override func didReceiveMemoryWarning() {

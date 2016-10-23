@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Vi-c5-jii">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="46c-UW-oo4"/>
                     <connections>
-                        <segue destination="js8-rD-gts" kind="show" identifier="goToTabBarController" id="iiB-f9-83W"/>
+                        <segue destination="js8-rD-gts" kind="show" identifier="tabBarControllerSegue" id="iiB-f9-83W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,11 +89,67 @@
                     <tabBarItem key="tabBarItem" title="Genres" id="e5m-QH-IZ9"/>
                     <connections>
                         <outlet property="tableView" destination="ihb-Cd-ZbN" id="LBY-LN-HtQ"/>
+                        <segue destination="Qy9-R5-8JJ" kind="show" identifier="bestsellersControllerSegue" id="ZDg-sr-RF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcW-ax-JQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2460" y="-222.63868065967017"/>
+        </scene>
+        <!--Bestsellers View Controller-->
+        <scene sceneID="70M-V8-UPz">
+            <objects>
+                <viewController id="Qy9-R5-8JJ" customClass="BestsellersViewController" customModule="roman_andruseiko_SimpleBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l6t-tG-C0z"/>
+                        <viewControllerLayoutGuide type="bottom" id="3y2-f4-DgV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OJt-LY-ucW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nmb-OW-CaD">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qy9-R5-8JJ" id="IWK-Ml-Yr4"/>
+                                    <outlet property="delegate" destination="Qy9-R5-8JJ" id="NIt-hu-faq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3y2-f4-DgV" firstAttribute="top" secondItem="Nmb-OW-CaD" secondAttribute="bottom" id="Apk-9r-LT8"/>
+                            <constraint firstItem="Nmb-OW-CaD" firstAttribute="leading" secondItem="OJt-LY-ucW" secondAttribute="leading" id="U2Q-Ss-r2v"/>
+                            <constraint firstAttribute="trailing" secondItem="Nmb-OW-CaD" secondAttribute="trailing" id="m76-Ya-1uG"/>
+                            <constraint firstItem="Nmb-OW-CaD" firstAttribute="top" secondItem="OJt-LY-ucW" secondAttribute="top" id="pk9-4o-pIl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Nmb-OW-CaD" id="HJn-7Y-WCl"/>
+                        <segue destination="IAg-pf-oXn" kind="show" identifier="detailsControllerSegue" id="6mK-jO-MzM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8k4-f5-MgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3312.8000000000002" y="-223.53823088455775"/>
+        </scene>
+        <!--Book Details View Controller-->
+        <scene sceneID="XlN-nU-Yqy">
+            <objects>
+                <viewController id="IAg-pf-oXn" customClass="BookDetailsViewController" customModule="roman_andruseiko_SimpleBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XRE-M2-iyB"/>
+                        <viewControllerLayoutGuide type="bottom" id="iY7-Az-ulx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a0N-4L-aBr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qD-c7-sMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4118" y="-223"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="w9W-L6-XKl">

@@ -9,16 +9,71 @@
 import UIKit
 
 class BestsellersViewController: UIViewController {
+    var genre:Genre?
+    
+    var dataSource: [Bestseller] = []
+    var refreshControl: UIRefreshControl!
+    var selectedBestseller: Bestseller?
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.register(UINib(nibName: "BestsellerCustomCell", bundle: nil), forCellReuseIdentifier: "BestsellerCustomCell")
+    
+        buildUI()
+        refreshData(sender: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func buildUI() {
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
+        refreshControl.addTarget(self, action: #selector(GenresViewController.refreshData(sender:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
+    func refreshData(sender:AnyObject?) {
+WebService.sharedInstance.getBestsellers((genre?.encodedName)!) { (bestsellers) in
+            self.dataSource = bestsellers ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                sender?.endRefreshing()
+            }
+        }
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController: BookDetailsViewController = segue.destination as! BookDetailsViewController
+        destinationViewController.bestseller = selectedBestseller
+    }
 }
+
+extension BestsellersViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BestsellerCustomCell", for: indexPath) as! BestsellerCustomCell
+        let bestseller = dataSource[(indexPath as NSIndexPath).row]
+        cell.bookNameLabel.text = bestseller.name
+        cell.authorLabel.text = bestseller.authorName
+        cell.coverImageView.setImageDownloadedFrom(link: WebService.sharedInstance.getCoverImageURL(bestseller.isbnCode))
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedBestseller = dataSource[(indexPath as NSIndexPath).row]
+        self.performSegue(withIdentifier: "detailsControllerSegue", sender: nil)
+    }
+}
+

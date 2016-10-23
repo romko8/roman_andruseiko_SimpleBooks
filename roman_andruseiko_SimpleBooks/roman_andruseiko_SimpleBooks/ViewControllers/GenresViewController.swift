@@ -13,6 +13,7 @@ class GenresViewController: UIViewController {
     
     var dataSource: [Genre] = []
     var refreshControl: UIRefreshControl!
+    var selectedGenre: Genre?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -20,7 +21,6 @@ class GenresViewController: UIViewController {
         
         buildUI()
         refreshData(sender: nil)
-//        WebService.sharedInstance.getBestsellers("Family")
     }
     
     func buildUI() {
@@ -58,7 +58,10 @@ class GenresViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController: BestsellersViewController = segue.destination as! BestsellersViewController
+        destinationViewController.genre = selectedGenre
+    }
 }
 
 extension GenresViewController : UITableViewDataSource, UITableViewDelegate {
@@ -81,6 +84,7 @@ extension GenresViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let genre = dataSource[(indexPath as NSIndexPath).row]
-        print(genre.encodedName)
+        selectedGenre = genre
+        self.performSegue(withIdentifier: "bestsellersControllerSegue", sender: nil)
     }
 }

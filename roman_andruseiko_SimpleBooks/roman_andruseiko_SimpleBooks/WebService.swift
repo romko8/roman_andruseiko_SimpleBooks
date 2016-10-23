@@ -52,14 +52,31 @@ class WebService: NSObject {
         }
     }
     
-    func getBestsellers(_ genre:String) {
-        makeRequest("GET", url: booksAPIServerURL + "lists/names.json?api-key=" + booksAPIKey + "?list=" + genre) { (response, error) in
-            print("response - \(response)")
+    func getBestsellers(_ genre:String,  completion: @escaping (_ bestsellers: [Bestseller]?) -> Void) {
+        makeRequest("GET", url: booksAPIServerURL + "lists.json?api-key=" + booksAPIKey + "&list=" + genre) { (response, error) in
+            if error == nil && response != nil {
+                if let results = response?.object(forKey: "results") as? [[String : AnyObject]]{
+                    var bestsellers:[Bestseller] = []
+                    for bestsellerDictionary in results {
+                        let bestseller = Bestseller.init(dictionary: bestsellerDictionary)
+                        bestsellers.append(bestseller)
+                    }
+                    completion(bestsellers)
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
         }
     }
     
-    func getCoverImageURL(_ isbn: String) -> String {
-        let imageUrl = "http://images.amazon.com/images/P/\(isbn).01.20TRZZZZ.jpg"
-        return imageUrl
+    func getCoverImageURL(_ isbn: String?) -> String {
+        if isbn != nil && (isbn?.characters.count)! > 0 {
+            let imageUrl = "http://images.amazon.com/images/P/\(isbn!).01.20TRZZZZ.jpg"
+            return imageUrl
+        } else {
+            return ""
+        }
     }
 }
