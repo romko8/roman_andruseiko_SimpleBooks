@@ -3,6 +3,9 @@
     <entity name="Book" representedClassName="Book" syncable="YES">
         <attribute name="amazonURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isbnCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="books" inverseEntity="User" syncable="YES"/>
@@ -14,7 +17,7 @@
         <relationship name="books" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Book" inverseName="user" inverseEntity="Book" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Book" positionX="115" positionY="72" width="128" height="165"/>
         <element name="User" positionX="-225" positionY="18" width="128" height="103"/>
-        <element name="Book" positionX="115" positionY="72" width="128" height="118"/>
     </elements>
 </model>

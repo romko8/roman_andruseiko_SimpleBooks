@@ -53,6 +53,17 @@ class BookDetailsViewController: UIViewController {
             amazonButton.isHidden = true
             shareButton.isHidden = true
         }
+        
+        setLikeButtonText()
+    }
+    
+    func setLikeButtonText() {
+        let book = CoreDataManager.sharedInstance.getBookWithCode(isbnCode: (bestseller?.isbnCode)!)
+        if book == nil {
+            likeButton.setTitle("Like", for: .normal)
+        } else {
+            likeButton.setTitle("Unlike", for: .normal)
+        }
     }
 
 
@@ -65,6 +76,12 @@ class BookDetailsViewController: UIViewController {
     }
     
     @IBAction func likeButtonPressed(_ sender: AnyObject) {
-    
+        let book = CoreDataManager.sharedInstance.getBookWithCode(isbnCode: (bestseller?.isbnCode)!)
+        if book == nil {
+            CoreDataManager.sharedInstance.createBook(name: (bestseller?.name)!, author: (bestseller?.authorName)!, amazonURL: (bestseller?.amazonURL)!, rank: String(describing: (bestseller?.rank)!), isbnCode: (bestseller?.isbnCode)!, image: UIImagePNGRepresentation(imageView.image!)! as NSData)
+        } else {
+            CoreDataManager.sharedInstance.removeBookWithCode(isbnCode: (bestseller?.isbnCode)!)
+        }
+        setLikeButtonText()
     }
 }
