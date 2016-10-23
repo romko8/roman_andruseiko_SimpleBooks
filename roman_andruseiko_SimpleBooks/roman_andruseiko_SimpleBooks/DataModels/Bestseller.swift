@@ -11,7 +11,7 @@ import Foundation
 class Bestseller: NSObject {
     var name: String?
     var authorName: String?
-    var rank: String?
+    var rank: Int = -1
     var isbnCode: String?
     var amazonURL: String?
     
@@ -29,7 +29,7 @@ class Bestseller: NSObject {
         }
         
         if dictionary["rank"] != nil {
-            self.rank = dictionary["rank"] as? String
+            self.rank = (dictionary["rank"] as? Int)!
         }
         
         if dictionary["isbns"] != nil {
