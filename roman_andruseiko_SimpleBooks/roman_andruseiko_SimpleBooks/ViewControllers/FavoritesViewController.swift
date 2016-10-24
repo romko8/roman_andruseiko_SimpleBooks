@@ -25,6 +25,8 @@ class FavoritesViewController: BestsellersViewController {
     }
 }
 
+// MARK: UITableView Delegate
+
 extension FavoritesViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

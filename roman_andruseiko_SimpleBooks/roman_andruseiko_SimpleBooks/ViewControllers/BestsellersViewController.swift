@@ -80,6 +80,8 @@ extension BestsellersViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: UITableView Delegate
+
 extension BestsellersViewController : UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -17,6 +17,8 @@ class LoginViewController: AbstractViewController {
         buildUI()
         
         checkForExistingUser()
+        
+        self.navigationController?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,5 +81,15 @@ extension LoginViewController:FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
     
+    }
+}
+
+// MARK: UINavigationController Delegate
+
+extension LoginViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let transitionManager = TransitionManager()
+        transitionManager.presenting = operation == .push
+        return transitionManager
     }
 }

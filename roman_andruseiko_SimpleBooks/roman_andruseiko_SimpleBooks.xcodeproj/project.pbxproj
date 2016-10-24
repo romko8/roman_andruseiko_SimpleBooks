@@ -29,6 +29,7 @@
 		CA7592BB1DBBE1D800A145F4 /* BestsellerCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7592BA1DBBE1D800A145F4 /* BestsellerCustomCell.xib */; };
 		CA7592BE1DBCE6B500A145F4 /* UIImageView+ImageDownloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7592BD1DBCE6B500A145F4 /* UIImageView+ImageDownloading.swift */; };
 		CA7592C41DBD368D00A145F4 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7592C31DBD368D00A145F4 /* Book+CoreDataProperties.swift */; };
+		CA7592C81DBDFA0700A145F4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7592C71DBDFA0700A145F4 /* TransitionManager.swift */; };
 		CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72E91DB93E8100AF4549 /* AppDelegate.swift */; };
 		CADF72EF1DB93E8100AF4549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADF72ED1DB93E8100AF4549 /* Main.storyboard */; };
 		CADF72F21DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CADF72F01DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.xcdatamodeld */; };
@@ -60,6 +61,7 @@
 		CA7592BA1DBBE1D800A145F4 /* BestsellerCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestsellerCustomCell.xib; sourceTree = "<group>"; };
 		CA7592BD1DBCE6B500A145F4 /* UIImageView+ImageDownloading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageDownloading.swift"; sourceTree = "<group>"; };
 		CA7592C31DBD368D00A145F4 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CA7592C71DBDFA0700A145F4 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		CADF72E61DB93E8100AF4549 /* roman_andruseiko_SimpleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roman_andruseiko_SimpleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF72E91DB93E8100AF4549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CADF72EE1DB93E8100AF4549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				CA7592C61DBDEC6100A145F4 /* Extensions */,
 				CA7592C51DBDEC1200A145F4 /* WebService */,
 				CADF72E91DB93E8100AF4549 /* AppDelegate.swift */,
+				CA7592C71DBDFA0700A145F4 /* TransitionManager.swift */,
 				CADF72ED1DB93E8100AF4549 /* Main.storyboard */,
 				CA2FD55E1DB9412D0065E636 /* FacebookSDK */,
 				CA2FD55D1DB940E40065E636 /* SupportingFiles */,
@@ -296,6 +299,7 @@
 				CA2FD5AB1DBA6A520065E636 /* Book+CoreDataClass.swift in Sources */,
 				CA2FD5AA1DBA6A520065E636 /* User+CoreDataProperties.swift in Sources */,
 				CA7592BE1DBCE6B500A145F4 /* UIImageView+ImageDownloading.swift in Sources */,
+				CA7592C81DBDFA0700A145F4 /* TransitionManager.swift in Sources */,
 				CA2FD58B1DBA4AD80065E636 /* FavoritesViewController.swift in Sources */,
 				CADF72EA1DB93E8100AF4549 /* AppDelegate.swift in Sources */,
 				CA2FD5A41DBA68300065E636 /* CoreDataManagerExtentsions.swift in Sources */,

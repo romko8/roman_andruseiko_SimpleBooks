@@ -71,6 +71,8 @@ class GenresViewController: AbstractViewController {
     }
 }
 
+// MARK: UITableView Delegate
+
 extension GenresViewController : UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
