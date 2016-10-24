@@ -45,12 +45,19 @@ class GenresViewController: AbstractViewController {
     }
     
     func logOutButtonPressed() {
-        FBSDKLoginManager.init().logOut()
-        FBSDKAccessToken.setCurrent(nil)
+        let alert = UIAlertController(title: "Message", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { (action) in
+            FBSDKLoginManager.init().logOut()
+            FBSDKAccessToken.setCurrent(nil)
+            
+            CoreDataManager.sharedInstance.removeUsers()
+            
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
 
-        CoreDataManager.sharedInstance.removeUsers()
-
-        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {

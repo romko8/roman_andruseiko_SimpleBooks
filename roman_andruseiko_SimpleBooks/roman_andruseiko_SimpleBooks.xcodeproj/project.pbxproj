@@ -152,6 +152,22 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		CA7592C51DBDEC1200A145F4 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				CA2FD57A1DB94FED0065E636 /* WebService.swift */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
+		CA7592C61DBDEC6100A145F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA7592BD1DBCE6B500A145F4 /* UIImageView+ImageDownloading.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		CADF72DD1DB93E8100AF4549 = {
 			isa = PBXGroup;
 			children = (
@@ -173,12 +189,12 @@
 			children = (
 				CA7592B71DBBE19800A145F4 /* UIElements */,
 				CA2FD5681DB943870065E636 /* ViewControllers */,
-				CADF72E91DB93E8100AF4549 /* AppDelegate.swift */,
-				CA7592BD1DBCE6B500A145F4 /* UIImageView+ImageDownloading.swift */,
-				CADF72ED1DB93E8100AF4549 /* Main.storyboard */,
-				CA2FD57A1DB94FED0065E636 /* WebService.swift */,
-				CA2FD5871DBA3C080065E636 /* DataModels */,
 				CA2FD5671DB942B10065E636 /* Database */,
+				CA2FD5871DBA3C080065E636 /* DataModels */,
+				CA7592C61DBDEC6100A145F4 /* Extensions */,
+				CA7592C51DBDEC1200A145F4 /* WebService */,
+				CADF72E91DB93E8100AF4549 /* AppDelegate.swift */,
+				CADF72ED1DB93E8100AF4549 /* Main.storyboard */,
 				CA2FD55E1DB9412D0065E636 /* FacebookSDK */,
 				CA2FD55D1DB940E40065E636 /* SupportingFiles */,
 			);

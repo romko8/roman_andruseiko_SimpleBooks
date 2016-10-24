@@ -52,22 +52,6 @@ class LoginViewController: AbstractViewController {
         self.performSegue(withIdentifier: "tabBarControllerSegue", sender: nil)
     }
     
-//    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
-//    parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"id, first_name, last_name, email, birthday, about, picture, gender", @"fields", nil]
-//    HTTPMethod:@"GET"]
-//    startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-//    
-//    if ([error.userInfo[FBSDKGraphRequestErrorGraphErrorCode] isEqual:@200]) {
-//    aBlock(nil);
-//    } else {
-//    if (result && [result isKindOfClass:[NSDictionary class]]) {
-//    aBlock(result);
-//    }else{
-//    aBlock(nil);
-//    }
-//    }
-//    }];
-    
 }
 
 // MARK: FBSDKLoginButton Delegate

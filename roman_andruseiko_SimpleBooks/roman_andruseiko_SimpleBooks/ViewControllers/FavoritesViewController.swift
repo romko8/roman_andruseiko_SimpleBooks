@@ -27,10 +27,9 @@ class FavoritesViewController: BestsellersViewController {
 
 extension FavoritesViewController {
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BestsellerCustomCell", for: indexPath) as! BestsellerCustomCell
-        let book = dataSource[(indexPath as NSIndexPath).row] as! Book
+        let book = dataSource[indexPath.row] as! Book
         cell.bookNameLabel.text = book.name
         cell.authorLabel.text = book.author
         if book.image != nil {
@@ -42,7 +41,7 @@ extension FavoritesViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "bookDetailsViewController") as! BookDetailsViewController
-        viewController.bestseller = Bestseller.init(book: (dataSource[(indexPath as NSIndexPath).row] as? Book)!)
+        viewController.bestseller = Bestseller.init(book: (dataSource[indexPath.row] as? Book)!)
         self.navigationController?.pushViewController(viewController, animated: true)
         
     }

@@ -134,16 +134,29 @@
                                     <outlet property="delegate" destination="Qy9-R5-8JJ" id="NIt-hu-faq"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="O91-ka-1Jf">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xWq-3s-SQh"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Qy9-R5-8JJ" id="Spx-dy-ih3"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3y2-f4-DgV" firstAttribute="top" secondItem="Nmb-OW-CaD" secondAttribute="bottom" id="Apk-9r-LT8"/>
-                            <constraint firstItem="Nmb-OW-CaD" firstAttribute="leading" secondItem="OJt-LY-ucW" secondAttribute="leading" id="U2Q-Ss-r2v"/>
-                            <constraint firstAttribute="trailing" secondItem="Nmb-OW-CaD" secondAttribute="trailing" id="m76-Ya-1uG"/>
-                            <constraint firstItem="Nmb-OW-CaD" firstAttribute="top" secondItem="OJt-LY-ucW" secondAttribute="top" id="pk9-4o-pIl"/>
+                            <constraint firstItem="Nmb-OW-CaD" firstAttribute="top" secondItem="OJt-LY-ucW" secondAttribute="top" constant="44" id="G8c-fC-hdc"/>
+                            <constraint firstAttribute="trailing" secondItem="Nmb-OW-CaD" secondAttribute="trailing" id="IqK-bM-wzM"/>
+                            <constraint firstItem="O91-ka-1Jf" firstAttribute="leading" secondItem="OJt-LY-ucW" secondAttribute="leading" id="Xqa-tS-ddV"/>
+                            <constraint firstItem="O91-ka-1Jf" firstAttribute="top" secondItem="l6t-tG-C0z" secondAttribute="bottom" id="fp3-oA-150"/>
+                            <constraint firstAttribute="trailing" secondItem="O91-ka-1Jf" secondAttribute="trailing" id="g2W-C9-QiD"/>
+                            <constraint firstItem="Nmb-OW-CaD" firstAttribute="leading" secondItem="OJt-LY-ucW" secondAttribute="leading" id="prK-1t-g9e"/>
+                            <constraint firstItem="3y2-f4-DgV" firstAttribute="top" secondItem="Nmb-OW-CaD" secondAttribute="bottom" id="zpE-5j-wa5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="O91-ka-1Jf" id="3aF-tu-XVW"/>
                         <outlet property="tableView" destination="Nmb-OW-CaD" id="HJn-7Y-WCl"/>
                     </connections>
                 </viewController>
