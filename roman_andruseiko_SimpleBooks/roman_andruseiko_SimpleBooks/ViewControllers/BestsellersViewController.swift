@@ -66,16 +66,13 @@ extension BestsellersViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let bestsellers = dataSource.map{$0 as! Bestseller}
         filteredDataSource = bestsellers.filter{
-        
-        let name = $0.name ?? ""
-        let authorName = $0.authorName ?? ""
+            let name = $0.name ?? ""
+            let authorName = $0.authorName ?? ""
             return name.range(of: searchText, options: .caseInsensitive)?.lowerBound != nil || authorName.range(of: searchText, options: .caseInsensitive)?.lowerBound != nil
         }
-        if(filteredDataSource.count == 0){
-            searchActive = false;
-        } else {
-            searchActive = true;
-        }
+        
+        searchActive = filteredDataSource.count != 0
+
         self.tableView.reloadData()
     }
 }
