@@ -16,37 +16,21 @@ class Bestseller: NSObject {
     var amazonURL: String?
     var imageData: NSData?
     
-    init (dictionary: [String : AnyObject]) {        
-        if dictionary["book_details"] != nil {
-            let bookDetails = dictionary["book_details"] as? [[String : AnyObject]]
-            if (bookDetails?.count)! > 0 {
-                if (bookDetails?.first!["author"]) != nil {
-                    self.authorName = bookDetails?.first!["author"] as? String
-                }
-                if (bookDetails?.first!["title"]) != nil {
-                    self.name = bookDetails?.first!["title"] as? String
-                }
+    init (dictionary: [String : AnyObject]) {
+        if let bookDetails = dictionary["book_details"] as? [[String : AnyObject]] {
+            if let bookDetail = bookDetails.first {
+                self.authorName = bookDetail["author"] as? String ?? ""
+                self.name = bookDetail["title"] as? String ?? ""
             }
         }
         
-        if dictionary["rank"] != nil {
-            self.rank = (dictionary["rank"] as? Int)!
-        } else {
-            self.rank = 0
+        self.rank = dictionary["rank"] as? Int ?? 0
+
+        if let isbns = dictionary["isbns"] as? [[String : AnyObject]] {
+            self.isbnCode = isbns.first?["isbn10"] as? String ?? String.randomString(length: 10)
         }
-        
-        if dictionary["isbns"] != nil {
-            let isbns = dictionary["isbns"] as? [[String : AnyObject]]
-            if (isbns?.count)! > 0 && ((isbns?.first!["isbn10"]) != nil) {
-                self.isbnCode = isbns?.first!["isbn10"] as? String
-            } else {
-                self.isbnCode = String.randomString(length: 10)
-            }
-        }
-        
-        if dictionary["amazon_product_url"] != nil {
-            self.amazonURL = dictionary["amazon_product_url"] as? String
-        }
+
+        self.amazonURL = dictionary["amazon_product_url"] as? String ?? ""
     }
     
     init(book: Book) {

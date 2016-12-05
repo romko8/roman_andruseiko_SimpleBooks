@@ -13,11 +13,7 @@ class Genre: NSObject {
     var encodedName: String?
 
     init (dictionary: [String : AnyObject]) {
-        if dictionary["display_name"] != nil {
-            self.name = dictionary["display_name"] as? String
-        }
-        if dictionary["list_name_encoded"] != nil {
-            self.encodedName = dictionary["list_name_encoded"] as? String
-        }
+        self.name = dictionary["display_name"] as? String ?? ""
+        self.encodedName = dictionary["list_name_encoded"] as? String ?? ""
     }
 }
